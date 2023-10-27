@@ -17,14 +17,6 @@ namespace MikraftProjet
         public Login()
         {
             InitializeComponent();
-            weg();
-        }
-        private void weg()
-        {
-            Timer checkhomeclose = new Timer();
-            checkhomeclose.Tick += new EventHandler(HomeClose);
-            checkhomeclose.Interval = 1000;
-            checkhomeclose.Start();
         }
         private async void XBOXLIVE_Click(object sender, System.EventArgs e)
         {
@@ -57,16 +49,5 @@ namespace MikraftProjet
                 Hide();
             }
         }
-
-        private void HomeClose(object sender, EventArgs e)
-        { 
-            Home home = new Home();
-
-            if (home.Isclose)
-            {
-                Application.Exit();
-            }
-        }
-        
     }
 }

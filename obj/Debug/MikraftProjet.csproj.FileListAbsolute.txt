@@ -54,3 +54,7 @@ C:\Users\taile\source\repos\MikraftProjet\MikraftProjet\obj\Debug\MikraftProjet.
 C:\Users\taile\source\repos\MikraftProjet\MikraftProjet\obj\Debug\MikraftProjet.exe
 C:\Users\taile\source\repos\MikraftProjet\MikraftProjet\obj\Debug\MikraftProjet.pdb
 C:\Users\taile\source\repos\MikraftProjet\MikraftProjet\obj\Debug\MikraftProjet.Home.resources
+C:\Users\taile\source\repos\MikraftProjet\MikraftProjet\bin\Debug\CmlLib.Core.Installer.Forge.dll
+C:\Users\taile\source\repos\MikraftProjet\MikraftProjet\bin\Debug\HtmlAgilityPack.dll
+C:\Users\taile\source\repos\MikraftProjet\MikraftProjet\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\taile\source\repos\MikraftProjet\MikraftProjet\bin\Debug\HtmlAgilityPack.xml

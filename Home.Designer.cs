@@ -31,6 +31,7 @@ namespace MikraftProjet
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.versions = new Guna.UI2.WinForms.Guna2ComboBox();
             this.Logout = new Guna.UI2.WinForms.Guna2Button();
             this.Game = new Guna.UI2.WinForms.Guna2Button();
             this.NameMC = new System.Windows.Forms.Label();
@@ -48,8 +49,6 @@ namespace MikraftProjet
             this.NewsScreen = new System.Windows.Forms.WebBrowser();
             this.pourcentage = new Guna.UI2.WinForms.Guna2ProgressBar();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.versions = new Guna.UI2.WinForms.Guna2ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Head)).BeginInit();
             this.SettingsBox.SuspendLayout();
@@ -70,6 +69,33 @@ namespace MikraftProjet
             this.groupBox1.Size = new System.Drawing.Size(1264, 68);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // versions
+            // 
+            this.versions.AutoRoundedCorners = true;
+            this.versions.BackColor = System.Drawing.Color.Transparent;
+            this.versions.BorderRadius = 17;
+            this.versions.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dot;
+            this.versions.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.versions.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.versions.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.versions.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.versions.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.versions.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.versions.ItemHeight = 30;
+            this.versions.Items.AddRange(new object[] {
+            "Client Forge 1.8.9",
+            "1.8.9",
+            "1.12.2",
+            "1.16.5",
+            "1.18.2",
+            "1.19.4",
+            "1.20.1"});
+            this.versions.Location = new System.Drawing.Point(754, 19);
+            this.versions.Name = "versions";
+            this.versions.Size = new System.Drawing.Size(175, 36);
+            this.versions.StartIndex = 5;
+            this.versions.TabIndex = 5;
             // 
             // Logout
             // 
@@ -293,44 +319,11 @@ namespace MikraftProjet
             this.label4.TabIndex = 6;
             this.label4.Text = "label4";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(1201, 605);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "label5";
-            this.label5.Visible = false;
-            // 
-            // versions
-            // 
-            this.versions.BackColor = System.Drawing.Color.Transparent;
-            this.versions.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.versions.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.versions.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.versions.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.versions.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.versions.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.versions.ItemHeight = 30;
-            this.versions.Items.AddRange(new object[] {
-            "1.8.9",
-            "1.12.2",
-            "1.16.5",
-            "1.18.2",
-            "1.19.4",
-            "1.20.1"});
-            this.versions.Location = new System.Drawing.Point(754, 19);
-            this.versions.Name = "versions";
-            this.versions.Size = new System.Drawing.Size(140, 36);
-            this.versions.TabIndex = 5;
-            // 
             // Home
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = global::MikraftProjet.Properties.Resources._2023_08_03_13_21_50;
             this.ClientSize = new System.Drawing.Size(1264, 681);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.pourcentage);
             this.Controls.Add(this.NewsScreen);
@@ -375,7 +368,6 @@ namespace MikraftProjet
         private Guna.UI2.WinForms.Guna2ComboBox ResCombo;
         private Guna.UI2.WinForms.Guna2ProgressBar pourcentage;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
         private EventHandler button2_Click;
         private Guna.UI2.WinForms.Guna2ComboBox versions;
     }

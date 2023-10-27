@@ -8,13 +8,12 @@ using CmlLib.Core;
 using CmlLib.Core.Auth;
 using CmlLib.Core.Auth.Microsoft;
 using Newtonsoft.Json;
-using static System.Collections.Specialized.BitVector32;
-using System.IO.Compression;
-using System.Threading.Tasks;
-using System.Security.Policy;
-using System.Net.Mail;
-using System.Text;
-using System.Web.UI.HtmlControls;
+using CmlLib.Core.VersionLoader;
+using CmlLib.Core.Version;
+using CmlLib.Core.Installer.Forge;
+using System.Net.Http;
+using CmlLib.Core.Installer;
+using System.ComponentModel;
 
 namespace MikraftProjet
 {
@@ -50,19 +49,25 @@ namespace MikraftProjet
             InitializeComponent();
             displayInfo();
             label4.Visible = false;
+            HomeClose();
         }
 
         private void HomeClose()
         {
-            Home home = new Home();
-            home.FormClosed += Home_FormClosed;
+           FormClosed += Home_FormClosed;
         }
 
         private void Home_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            this.Isclose = true;
-        }
+        { 
+            Login login = new Login();
+                
+            if (login != null && !login.IsDisposed)
+            {
+                login.Close();
+            }
+            Application.Exit();
 
+        }
         private void displayInfo()
         {
             NameMC.Text = username;
@@ -138,22 +143,17 @@ namespace MikraftProjet
 
             string selectedresolution = ResCombo.SelectedItem.ToString();
             string selectedram = RamCombo.SelectedItem.ToString();
-
             string[] resolutionParts = selectedresolution.Split('x');
+            string forgeselect = "Client Forge 1.8.9";
+
             int width = int.Parse(resolutionParts[0]);
             int height = int.Parse(resolutionParts[1]);
             int ram = int.Parse(selectedram);
 
             launcher.FileChanged += Launcher_FileChanged;
+            launcher.ProgressChanged += launcher_ProgressChanged;
 
-
-
-            launcher.ProgressChanged += (s, e) =>
-            {
-                label5.Visible = true;
-                pourcentage.Value = e.ProgressPercentage;
-                label5.Text = string.Format("{0}", e.ProgressPercentage / 1024d / 1024).ToString();
-            };
+            var forge = new CmlLib.Core.Installer.Forge.MForge(launcher);
 
 
             var launchOption = new MLaunchOption
@@ -162,8 +162,17 @@ namespace MikraftProjet
                 ScreenWidth = width,
                 ScreenHeight = height,
                 Session = new MSession(Login.Username, Login.Token, Login.UUID),
-                GameLauncherName = "launcher",
+                GameLauncherName = "wega",
             };
+
+            if (versions.SelectedItem.Equals(forgeselect))
+            {
+                var forgev = await forge.Install("1.8.9");
+                var process2 = await launcher.CreateProcessAsync(forgev, launchOption);
+                process2.EnableRaisingEvents = true;
+                process2.Exited += new EventHandler(GameProcess_Exited);
+                process2.Start();
+            }
 
             Logout.Enabled = false;
             Game.Enabled = false;
@@ -171,6 +180,7 @@ namespace MikraftProjet
             process.EnableRaisingEvents = true;
             process.Exited += new EventHandler(GameProcess_Exited);
             process.Start();
+            
            
         }
 
@@ -178,7 +188,7 @@ namespace MikraftProjet
         private void GameProcess_Exited(object sender, EventArgs e)
         {
 
-            this.Invoke((MethodInvoker)delegate
+            Invoke((MethodInvoker)delegate
             {
                 Game.Enabled = true;
                 Logout.Enabled = true;
@@ -190,6 +200,11 @@ namespace MikraftProjet
             label4.Text = string.Format("file : "+ e.FileName+"   "+e.ProgressedFileCount+"/"+e.TotalFileCount);
            
         }
+        private void launcher_ProgressChanged(object sender, System.ComponentModel.ProgressChangedEventArgs e)
+        {
+            pourcentage.Value = e.ProgressPercentage;
+        }
+
         ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         private async void LaunchDaGameCrack()
@@ -215,9 +230,7 @@ namespace MikraftProjet
 
             launcher.ProgressChanged += (s, e) =>
             {
-                label5.Visible = true;
                 pourcentage.Value = e.ProgressPercentage;
-                label5.Text = string.Format("0.00", e.UserState).ToString();
             };
 
 
@@ -226,7 +239,7 @@ namespace MikraftProjet
                 MaximumRamMb = ram,
                 ScreenWidth = width,
                 ScreenHeight = height,
-                Session = MSession.GetOfflineSession(username),
+                Session = MSession.CreateOfflineSession(username),
                 GameLauncherName = "launcher",
             };
 
@@ -251,7 +264,6 @@ namespace MikraftProjet
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             var loginHandler = JELoginHandlerBuilder.BuildDefault();
-            var session = loginHandler.Signout();
             MessageBox.Show("You have been logout from the account. Redireting to the login panel");
 
             Hide();
@@ -263,6 +275,8 @@ namespace MikraftProjet
         {
             Console.Write("loaded");
         }
+
+
 
 
         //settings will be go brrr with this fire code

@@ -80,14 +80,20 @@
     </StartupObject>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CmlLib, Version=3.3.7.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CmlLib.Core.3.3.7\lib\netstandard2.0\CmlLib.dll</HintPath>
+    <Reference Include="CmlLib, Version=3.3.8.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CmlLib.Core.3.3.8\lib\netstandard2.0\CmlLib.dll</HintPath>
     </Reference>
-    <Reference Include="CmlLib.Core.Auth.Microsoft, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CmlLib.Core.Auth.Microsoft.3.0.0\lib\netstandard2.0\CmlLib.Core.Auth.Microsoft.dll</HintPath>
+    <Reference Include="CmlLib.Core.Auth.Microsoft, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CmlLib.Core.Auth.Microsoft.3.0.1\lib\netstandard2.0\CmlLib.Core.Auth.Microsoft.dll</HintPath>
+    </Reference>
+    <Reference Include="CmlLib.Core.Installer.Forge, Version=0.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CmlLib.Core.Installer.Forge.0.0.2\lib\netstandard2.0\CmlLib.Core.Installer.Forge.dll</HintPath>
     </Reference>
     <Reference Include="Guna.UI2, Version=2.0.4.4, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
       <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.4\lib\net48\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.11.48.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.11.48\lib\Net45\HtmlAgilityPack.dll</HintPath>
     </Reference>
     <Reference Include="ICSharpCode.SharpZipLib, Version=1.4.2.13, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
       <HintPath>..\packages\SharpZipLib.1.4.2\lib\netstandard2.0\ICSharpCode.SharpZipLib.dll</HintPath>
@@ -164,8 +170,8 @@
     <Reference Include="XboxAuthNet, Version=3.0.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\XboxAuthNet.3.0.2\lib\net472\XboxAuthNet.dll</HintPath>
     </Reference>
-    <Reference Include="XboxAuthNet.Game, Version=1.2.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\XboxAuthNet.Game.1.2.1\lib\netstandard2.0\XboxAuthNet.Game.dll</HintPath>
+    <Reference Include="XboxAuthNet.Game, Version=1.2.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\XboxAuthNet.Game.1.2.2\lib\netstandard2.0\XboxAuthNet.Game.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
