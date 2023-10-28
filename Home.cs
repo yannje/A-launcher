@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Net;
@@ -8,12 +7,8 @@ using CmlLib.Core;
 using CmlLib.Core.Auth;
 using CmlLib.Core.Auth.Microsoft;
 using Newtonsoft.Json;
-using CmlLib.Core.VersionLoader;
-using CmlLib.Core.Version;
-using CmlLib.Core.Installer.Forge;
-using System.Net.Http;
-using CmlLib.Core.Installer;
-using System.ComponentModel;
+using CmlLib.Core.Installer.FabricMC;
+using System.Threading;
 
 namespace MikraftProjet
 {
@@ -50,6 +45,7 @@ namespace MikraftProjet
             displayInfo();
             label4.Visible = false;
             HomeClose();
+            NewsRefresh();
         }
 
         private void HomeClose()
@@ -135,6 +131,7 @@ namespace MikraftProjet
         {
 
             string selectedVersion = versions.SelectedItem.ToString();
+            string selectedloader = loader.SelectedItem.ToString();
             WebClient webClient = new WebClient();
 
             
@@ -144,8 +141,7 @@ namespace MikraftProjet
             string selectedresolution = ResCombo.SelectedItem.ToString();
             string selectedram = RamCombo.SelectedItem.ToString();
             string[] resolutionParts = selectedresolution.Split('x');
-            string forgeselect = "Client Forge 1.8.9";
-
+            
             int width = int.Parse(resolutionParts[0]);
             int height = int.Parse(resolutionParts[1]);
             int ram = int.Parse(selectedram);
@@ -154,6 +150,9 @@ namespace MikraftProjet
             launcher.ProgressChanged += launcher_ProgressChanged;
 
             var forge = new CmlLib.Core.Installer.Forge.MForge(launcher);
+
+            var fabricVersionLoader = new FabricVersionLoader();
+            var fabricVersions = await fabricVersionLoader.GetVersionMetadatasAsync();
 
 
             var launchOption = new MLaunchOption
@@ -165,23 +164,57 @@ namespace MikraftProjet
                 GameLauncherName = "wega",
             };
 
-            if (versions.SelectedItem.Equals(forgeselect))
+            if(selectedloader== "Forge")
             {
-                var forgev = await forge.Install("1.8.9");
-                var process2 = await launcher.CreateProcessAsync(forgev, launchOption);
-                process2.EnableRaisingEvents = true;
-                process2.Exited += new EventHandler(GameProcess_Exited);
-                process2.Start();
-            }
+                
+                Logout.Enabled = false;
+                Game.Enabled = false;
 
-            Logout.Enabled = false;
-            Game.Enabled = false;
-            var process = await launcher.CreateProcessAsync(selectedVersion, launchOption);
-            process.EnableRaisingEvents = true;
-            process.Exited += new EventHandler(GameProcess_Exited);
-            process.Start();
-            
-           
+                var forgev = await forge.Install(selectedVersion);
+                var process =  await launcher.CreateProcessAsync(forgev, launchOption);
+                if (checkBox1.Checked) 
+                {
+                    Hide();
+                }
+                process.EnableRaisingEvents = true;
+                process.Exited += new EventHandler(GameProcess_Exited);
+                process.Start();
+
+                
+            };
+
+            if (selectedloader == "Fabric")
+            {
+
+                var fabricVersionName = "fabric-loader-0.14.24-"+selectedVersion;
+
+                Logout.Enabled = false;
+                Game.Enabled = false;
+
+                var process = await launcher.CreateProcessAsync(fabricVersionName, launchOption);
+                if (checkBox1.Checked)
+                {
+                    Hide();
+                }
+                process.EnableRaisingEvents = true;
+                process.Exited += new EventHandler(GameProcess_Exited);
+                process.Start();
+            };
+
+            if(selectedloader == "Vanilla")
+            {
+                Logout.Enabled = false;
+                Game.Enabled = false;
+                var process = await launcher.CreateProcessAsync(selectedVersion, launchOption);
+                if (checkBox1.Checked)
+                {
+                    Hide();
+                }
+                process.EnableRaisingEvents = true;
+                process.Exited += new EventHandler(GameProcess_Exited);
+                process.Start();
+            };
+
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -192,6 +225,15 @@ namespace MikraftProjet
             {
                 Game.Enabled = true;
                 Logout.Enabled = true;
+                if (checkBox1.Checked)
+                {
+                    Show();
+                }
+
+                if (checkBox3.Checked)
+                {
+                    Application.Exit();
+                };
             });
         }
         private void Launcher_FileChanged(CmlLib.Core.Downloader.DownloadFileChangedEventArgs e)
@@ -210,6 +252,7 @@ namespace MikraftProjet
         private async void LaunchDaGameCrack()
         {
             string selectedVersion = versions.SelectedItem.ToString();
+            string selectedloader = loader.SelectedItem.ToString();
             WebClient webClient = new WebClient();
 
 
@@ -225,13 +268,14 @@ namespace MikraftProjet
             int ram = int.Parse(selectedram);
 
             launcher.FileChanged += Launcher_FileChanged;
-
-
-
             launcher.ProgressChanged += (s, e) =>
             {
                 pourcentage.Value = e.ProgressPercentage;
             };
+
+            var forge = new CmlLib.Core.Installer.Forge.MForge(launcher);
+            var fabricVersionLoader = new FabricVersionLoader();
+            var fabricVersions = await fabricVersionLoader.GetVersionMetadatasAsync();
 
 
             var launchOption = new MLaunchOption
@@ -243,13 +287,56 @@ namespace MikraftProjet
                 GameLauncherName = "launcher",
             };
 
-            Logout.Enabled = false;
-            Game.Enabled = false;
-            var process = await launcher.CreateProcessAsync(selectedVersion, launchOption);
-            process.EnableRaisingEvents = true;
-            process.Exited += new EventHandler(GameProcess_Exited);
-            process.Start();
+            if (selectedloader == "Forge")
+            {
 
+                Logout.Enabled = false;
+                Game.Enabled = false;
+
+                var forgev = await forge.Install(selectedVersion);
+                var process = await launcher.CreateProcessAsync(forgev, launchOption);
+                if (checkBox1.Checked)
+                {
+                    Hide();
+                }
+                process.EnableRaisingEvents = true;
+                process.Exited += new EventHandler(GameProcess_Exited);
+                process.Start();
+
+
+            };
+
+            if (selectedloader == "Fabric")
+            {
+
+                var fabricVersionName = "fabric-loader-0.14.24-" + selectedVersion;
+
+                Logout.Enabled = false;
+                Game.Enabled = false;
+
+                var process = await launcher.CreateProcessAsync(fabricVersionName, launchOption);
+                if (checkBox1.Checked)
+                {
+                    Hide();
+                }
+                process.EnableRaisingEvents = true;
+                process.Exited += new EventHandler(GameProcess_Exited);
+                process.Start();
+            };
+
+            if (selectedloader == "Vanilla")
+            {
+                Logout.Enabled = false;
+                Game.Enabled = false;
+                var process = await launcher.CreateProcessAsync(selectedVersion, launchOption);
+                if (checkBox1.Checked)
+                {
+                    Hide();
+                }
+                process.EnableRaisingEvents = true;
+                process.Exited += new EventHandler(GameProcess_Exited);
+                process.Start();
+            };
         }
 
         /// <summary>
@@ -263,7 +350,7 @@ namespace MikraftProjet
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            var loginHandler = JELoginHandlerBuilder.BuildDefault();
+            JELoginHandlerBuilder.BuildDefault();
             MessageBox.Show("You have been logout from the account. Redireting to the login panel");
 
             Hide();
@@ -274,13 +361,60 @@ namespace MikraftProjet
         private void Home_Load(object sender, EventArgs e)
         {
             Console.Write("loaded");
+
         }
 
+        private void NewsRefresh()
+        {
+            System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
 
+            timer.Interval = 120000;
+            timer.Tick += Timer_Tick;
+            timer.Start();
+        }
 
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            NewsScreen.Refresh();
+        }
 
-        //settings will be go brrr with this fire code
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox2.Checked == true)
+            {
+                NewsScreen.Hide();
+            };
 
+            if (checkBox2.Checked == false)
+            {
+                NewsScreen.Show();
+            }
+        }
 
+        private void openFileDialog1_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            MessageBox.Show("cool");
+        }
+
+        private void guna2Button1_Click_1(object sender, EventArgs e)
+        {
+            openFileDialog1.ShowDialog();
+        }
+
+        private void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (language.SelectedIndex)
+            {
+                case 0:
+                    Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en");
+                    break;
+                case 1:
+                    Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("fr");
+                    language.SelectedIndex = 1;
+                    break;
+            }
+            Controls.Clear();
+            InitializeComponent();
+        }
     }
 }

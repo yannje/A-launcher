@@ -30,7 +30,9 @@ namespace MikraftProjet
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.loader = new Guna.UI2.WinForms.Guna2ComboBox();
             this.versions = new Guna.UI2.WinForms.Guna2ComboBox();
             this.Logout = new Guna.UI2.WinForms.Guna2Button();
             this.Game = new Guna.UI2.WinForms.Guna2Button();
@@ -46,56 +48,77 @@ namespace MikraftProjet
             this.Java = new Guna.UI2.WinForms.Guna2GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.OtherSettings = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.language = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.NewsScreen = new System.Windows.Forms.WebBrowser();
             this.pourcentage = new Guna.UI2.WinForms.Guna2ProgressBar();
             this.label4 = new System.Windows.Forms.Label();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.label5 = new System.Windows.Forms.Label();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Head)).BeginInit();
             this.SettingsBox.SuspendLayout();
             this.ScreenResolution.SuspendLayout();
             this.Java.SuspendLayout();
+            this.OtherSettings.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.loader);
             this.groupBox1.Controls.Add(this.versions);
             this.groupBox1.Controls.Add(this.Logout);
             this.groupBox1.Controls.Add(this.Game);
             this.groupBox1.Controls.Add(this.NameMC);
             this.groupBox1.Controls.Add(this.Head);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox1.Location = new System.Drawing.Point(0, 613);
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1264, 68);
-            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // loader
+            // 
+            this.loader.AutoRoundedCorners = true;
+            this.loader.BackColor = System.Drawing.Color.Transparent;
+            this.loader.BorderRadius = 17;
+            this.loader.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dot;
+            this.loader.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.loader.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.loader.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.loader.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            resources.ApplyResources(this.loader, "loader");
+            this.loader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.loader.Items.AddRange(new object[] {
+            resources.GetString("loader.Items"),
+            resources.GetString("loader.Items1"),
+            resources.GetString("loader.Items2")});
+            this.loader.Name = "loader";
+            this.loader.StartIndex = 0;
             // 
             // versions
             // 
             this.versions.AutoRoundedCorners = true;
             this.versions.BackColor = System.Drawing.Color.Transparent;
             this.versions.BorderRadius = 17;
-            this.versions.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dot;
+            this.versions.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
             this.versions.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.versions.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.versions.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.versions.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.versions.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            resources.ApplyResources(this.versions, "versions");
             this.versions.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.versions.ItemHeight = 30;
             this.versions.Items.AddRange(new object[] {
-            "Client Forge 1.8.9",
-            "1.8.9",
-            "1.12.2",
-            "1.16.5",
-            "1.18.2",
-            "1.19.4",
-            "1.20.1"});
-            this.versions.Location = new System.Drawing.Point(754, 19);
+            resources.GetString("versions.Items"),
+            resources.GetString("versions.Items1"),
+            resources.GetString("versions.Items2"),
+            resources.GetString("versions.Items3"),
+            resources.GetString("versions.Items4"),
+            resources.GetString("versions.Items5"),
+            resources.GetString("versions.Items6")});
             this.versions.Name = "versions";
-            this.versions.Size = new System.Drawing.Size(175, 36);
-            this.versions.StartIndex = 5;
-            this.versions.TabIndex = 5;
+            this.versions.StartIndex = 6;
             // 
             // Logout
             // 
@@ -105,13 +128,9 @@ namespace MikraftProjet
             this.Logout.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.Logout.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.Logout.FillColor = System.Drawing.Color.White;
-            this.Logout.Font = new System.Drawing.Font("Roboto Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(1)), true);
+            resources.ApplyResources(this.Logout, "Logout");
             this.Logout.ForeColor = System.Drawing.Color.Black;
-            this.Logout.Location = new System.Drawing.Point(1069, 15);
             this.Logout.Name = "Logout";
-            this.Logout.Size = new System.Drawing.Size(180, 45);
-            this.Logout.TabIndex = 4;
-            this.Logout.Text = "Logout";
             this.Logout.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // Game
@@ -122,41 +141,26 @@ namespace MikraftProjet
             this.Game.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.Game.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.Game.FillColor = System.Drawing.Color.White;
-            this.Game.Font = new System.Drawing.Font("Roboto Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(1)), true);
+            resources.ApplyResources(this.Game, "Game");
             this.Game.ForeColor = System.Drawing.Color.Black;
-            this.Game.Location = new System.Drawing.Point(552, 15);
             this.Game.Name = "Game";
-            this.Game.Size = new System.Drawing.Size(180, 45);
-            this.Game.TabIndex = 3;
-            this.Game.Text = "Launch";
             this.Game.Click += new System.EventHandler(this.Game_Click);
             // 
             // NameMC
             // 
-            this.NameMC.AutoSize = true;
-            this.NameMC.Font = new System.Drawing.Font("Miriam Libre", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NameMC.Location = new System.Drawing.Point(66, 26);
+            resources.ApplyResources(this.NameMC, "NameMC");
             this.NameMC.Name = "NameMC";
-            this.NameMC.Size = new System.Drawing.Size(54, 21);
-            this.NameMC.TabIndex = 2;
-            this.NameMC.Text = "Name";
             // 
             // Head
             // 
-            this.Head.Location = new System.Drawing.Point(12, 12);
+            resources.ApplyResources(this.Head, "Head");
             this.Head.Name = "Head";
-            this.Head.Size = new System.Drawing.Size(48, 48);
-            this.Head.TabIndex = 0;
             this.Head.TabStop = false;
             // 
             // InfoMC
             // 
-            this.InfoMC.AutoSize = true;
-            this.InfoMC.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InfoMC.Location = new System.Drawing.Point(632, 576);
+            resources.ApplyResources(this.InfoMC, "InfoMC");
             this.InfoMC.Name = "InfoMC";
-            this.InfoMC.Size = new System.Drawing.Size(0, 25);
-            this.InfoMC.TabIndex = 1;
             // 
             // SettingsBox
             // 
@@ -166,13 +170,9 @@ namespace MikraftProjet
             this.SettingsBox.Controls.Add(this.Java);
             this.SettingsBox.Controls.Add(this.OtherSettings);
             this.SettingsBox.FillColor = System.Drawing.Color.Transparent;
-            this.SettingsBox.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Bold);
+            resources.ApplyResources(this.SettingsBox, "SettingsBox");
             this.SettingsBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.SettingsBox.Location = new System.Drawing.Point(862, 12);
             this.SettingsBox.Name = "SettingsBox";
-            this.SettingsBox.Size = new System.Drawing.Size(390, 561);
-            this.SettingsBox.TabIndex = 3;
-            this.SettingsBox.Text = "Settings";
             // 
             // ScreenResolution
             // 
@@ -181,13 +181,9 @@ namespace MikraftProjet
             this.ScreenResolution.Controls.Add(this.RamCombo);
             this.ScreenResolution.Controls.Add(this.label3);
             this.ScreenResolution.Controls.Add(this.label2);
-            this.ScreenResolution.Font = new System.Drawing.Font("Segoe UI", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.ScreenResolution, "ScreenResolution");
             this.ScreenResolution.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.ScreenResolution.Location = new System.Drawing.Point(3, 43);
             this.ScreenResolution.Name = "ScreenResolution";
-            this.ScreenResolution.Size = new System.Drawing.Size(384, 186);
-            this.ScreenResolution.TabIndex = 1;
-            this.ScreenResolution.Text = "General";
             // 
             // ResCombo
             // 
@@ -197,19 +193,15 @@ namespace MikraftProjet
             this.ResCombo.FillColor = System.Drawing.Color.Silver;
             this.ResCombo.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.ResCombo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.ResCombo.Font = new System.Drawing.Font("Segoe UI", 10F);
+            resources.ApplyResources(this.ResCombo, "ResCombo");
             this.ResCombo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.ResCombo.ItemHeight = 30;
             this.ResCombo.Items.AddRange(new object[] {
-            "800x600",
-            "1280x720",
-            "1600x900",
-            "1080x1920"});
-            this.ResCombo.Location = new System.Drawing.Point(59, 47);
+            resources.GetString("ResCombo.Items"),
+            resources.GetString("ResCombo.Items1"),
+            resources.GetString("ResCombo.Items2"),
+            resources.GetString("ResCombo.Items3")});
             this.ResCombo.Name = "ResCombo";
-            this.ResCombo.Size = new System.Drawing.Size(247, 36);
             this.ResCombo.StartIndex = 1;
-            this.ResCombo.TabIndex = 5;
             this.ResCombo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ResCombo.TextOffset = new System.Drawing.Point(10, 0);
             // 
@@ -221,109 +213,145 @@ namespace MikraftProjet
             this.RamCombo.FillColor = System.Drawing.Color.Silver;
             this.RamCombo.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.RamCombo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.RamCombo.Font = new System.Drawing.Font("Segoe UI", 10F);
+            resources.ApplyResources(this.RamCombo, "RamCombo");
             this.RamCombo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.RamCombo.ItemHeight = 30;
             this.RamCombo.Items.AddRange(new object[] {
-            "1024",
-            "2048",
-            "3072",
-            "4096",
-            "5120",
-            "6144"});
-            this.RamCombo.Location = new System.Drawing.Point(59, 110);
+            resources.GetString("RamCombo.Items"),
+            resources.GetString("RamCombo.Items1"),
+            resources.GetString("RamCombo.Items2"),
+            resources.GetString("RamCombo.Items3"),
+            resources.GetString("RamCombo.Items4"),
+            resources.GetString("RamCombo.Items5")});
             this.RamCombo.Name = "RamCombo";
-            this.RamCombo.Size = new System.Drawing.Size(247, 36);
             this.RamCombo.StartIndex = 1;
-            this.RamCombo.TabIndex = 4;
             this.RamCombo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.RamCombo.TextOffset = new System.Drawing.Point(10, 0);
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(113, 149);
+            resources.ApplyResources(this.label3, "label3");
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(166, 15);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Set the amount of ram  (mb)";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(126, 86);
+            resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(113, 15);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Set your resolution";
             // 
             // Java
             // 
             this.Java.BorderRadius = 10;
+            this.Java.Controls.Add(this.guna2Button1);
+            this.Java.Controls.Add(this.label5);
             this.Java.Controls.Add(this.label1);
-            this.Java.Font = new System.Drawing.Font("Segoe UI", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.Java, "Java");
             this.Java.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.Java.Location = new System.Drawing.Point(3, 235);
             this.Java.Name = "Java";
-            this.Java.Size = new System.Drawing.Size(384, 190);
-            this.Java.TabIndex = 2;
-            this.Java.Text = "Java";
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(134, 54);
+            resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 15);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Choose java path";
             // 
             // OtherSettings
             // 
             this.OtherSettings.BorderRadius = 10;
-            this.OtherSettings.Font = new System.Drawing.Font("Segoe UI", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OtherSettings.Controls.Add(this.checkBox3);
+            this.OtherSettings.Controls.Add(this.language);
+            this.OtherSettings.Controls.Add(this.checkBox2);
+            this.OtherSettings.Controls.Add(this.checkBox1);
+            resources.ApplyResources(this.OtherSettings, "OtherSettings");
             this.OtherSettings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.OtherSettings.Location = new System.Drawing.Point(3, 431);
             this.OtherSettings.Name = "OtherSettings";
-            this.OtherSettings.Size = new System.Drawing.Size(384, 127);
-            this.OtherSettings.TabIndex = 3;
-            this.OtherSettings.Text = "Others";
+            // 
+            // checkBox3
+            // 
+            resources.ApplyResources(this.checkBox3, "checkBox3");
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.UseVisualStyleBackColor = true;
+            // 
+            // language
+            // 
+            this.language.AutoRoundedCorners = true;
+            this.language.BackColor = System.Drawing.Color.Transparent;
+            this.language.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.language.BorderRadius = 17;
+            this.language.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.language.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.language.FillColor = System.Drawing.Color.Silver;
+            this.language.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.language.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            resources.ApplyResources(this.language, "language");
+            this.language.ForeColor = System.Drawing.Color.Black;
+            this.language.Items.AddRange(new object[] {
+            resources.GetString("language.Items"),
+            resources.GetString("language.Items1")});
+            this.language.Name = "language";
+            this.language.StartIndex = 0;
+            this.language.SelectedIndexChanged += new System.EventHandler(this.guna2ComboBox1_SelectedIndexChanged);
+            // 
+            // checkBox2
+            // 
+            resources.ApplyResources(this.checkBox2, "checkBox2");
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+            // 
+            // checkBox1
+            // 
+            resources.ApplyResources(this.checkBox1, "checkBox1");
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // NewsScreen
             // 
             this.NewsScreen.AllowNavigation = false;
             this.NewsScreen.AllowWebBrowserDrop = false;
-            this.NewsScreen.Location = new System.Drawing.Point(12, 12);
-            this.NewsScreen.MinimumSize = new System.Drawing.Size(20, 20);
+            resources.ApplyResources(this.NewsScreen, "NewsScreen");
             this.NewsScreen.Name = "NewsScreen";
-            this.NewsScreen.Size = new System.Drawing.Size(828, 561);
-            this.NewsScreen.TabIndex = 4;
+            this.NewsScreen.ScriptErrorsSuppressed = true;
+            this.NewsScreen.Url = new System.Uri("http://swagshitmoney.rf.gd/", System.UriKind.Absolute);
             this.NewsScreen.WebBrowserShortcutsEnabled = false;
             // 
             // pourcentage
             // 
             this.pourcentage.BorderRadius = 10;
-            this.pourcentage.Location = new System.Drawing.Point(0, 598);
+            resources.ApplyResources(this.pourcentage, "pourcentage");
             this.pourcentage.Name = "pourcentage";
-            this.pourcentage.Size = new System.Drawing.Size(1270, 24);
-            this.pourcentage.TabIndex = 5;
-            this.pourcentage.Text = "guna2ProgressBar1";
             this.pourcentage.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(626, 605);
+            resources.ApplyResources(this.label4, "label4");
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "label4";
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "Java";
+            resources.ApplyResources(this.openFileDialog1, "openFileDialog1");
+            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
+            // 
+            // label5
+            // 
+            resources.ApplyResources(this.label5, "label5");
+            this.label5.Name = "label5";
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.FillColor = System.Drawing.Color.Black;
+            resources.ApplyResources(this.guna2Button1, "guna2Button1");
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click_1);
             // 
             // Home
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = global::MikraftProjet.Properties.Resources._2023_08_03_13_21_50;
-            this.ClientSize = new System.Drawing.Size(1264, 681);
+            resources.ApplyResources(this, "$this");
             this.Controls.Add(this.label4);
             this.Controls.Add(this.pourcentage);
             this.Controls.Add(this.NewsScreen);
@@ -332,8 +360,6 @@ namespace MikraftProjet
             this.Controls.Add(this.SettingsBox);
             this.MaximizeBox = false;
             this.Name = "Home";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Home";
             this.Load += new System.EventHandler(this.Home_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -343,10 +369,13 @@ namespace MikraftProjet
             this.ScreenResolution.PerformLayout();
             this.Java.ResumeLayout(false);
             this.Java.PerformLayout();
+            this.OtherSettings.ResumeLayout(false);
+            this.OtherSettings.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
+
 
         #endregion
 
@@ -370,5 +399,13 @@ namespace MikraftProjet
         private System.Windows.Forms.Label label4;
         private EventHandler button2_Click;
         private Guna.UI2.WinForms.Guna2ComboBox versions;
+        private Guna.UI2.WinForms.Guna2ComboBox loader;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private Guna.UI2.WinForms.Guna2ComboBox language;
+        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private System.Windows.Forms.Label label5;
     }
 }
