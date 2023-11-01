@@ -45,8 +45,6 @@ namespace MikraftProjet
             this.RamCombo = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.Java = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.OtherSettings = new Guna.UI2.WinForms.Guna2GroupBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.language = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -55,14 +53,10 @@ namespace MikraftProjet
             this.NewsScreen = new System.Windows.Forms.WebBrowser();
             this.pourcentage = new Guna.UI2.WinForms.Guna2ProgressBar();
             this.label4 = new System.Windows.Forms.Label();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.label5 = new System.Windows.Forms.Label();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Head)).BeginInit();
             this.SettingsBox.SuspendLayout();
             this.ScreenResolution.SuspendLayout();
-            this.Java.SuspendLayout();
             this.OtherSettings.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -167,7 +161,6 @@ namespace MikraftProjet
             this.SettingsBox.BackColor = System.Drawing.Color.Transparent;
             this.SettingsBox.BorderRadius = 10;
             this.SettingsBox.Controls.Add(this.ScreenResolution);
-            this.SettingsBox.Controls.Add(this.Java);
             this.SettingsBox.Controls.Add(this.OtherSettings);
             this.SettingsBox.FillColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.SettingsBox, "SettingsBox");
@@ -237,21 +230,6 @@ namespace MikraftProjet
             resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
             // 
-            // Java
-            // 
-            this.Java.BorderRadius = 10;
-            this.Java.Controls.Add(this.guna2Button1);
-            this.Java.Controls.Add(this.label5);
-            this.Java.Controls.Add(this.label1);
-            resources.ApplyResources(this.Java, "Java");
-            this.Java.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.Java.Name = "Java";
-            // 
-            // label1
-            // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.Name = "label1";
-            // 
             // OtherSettings
             // 
             this.OtherSettings.BorderRadius = 10;
@@ -268,6 +246,7 @@ namespace MikraftProjet
             resources.ApplyResources(this.checkBox3, "checkBox3");
             this.checkBox3.Name = "checkBox3";
             this.checkBox3.UseVisualStyleBackColor = true;
+            this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
             // 
             // language
             // 
@@ -301,6 +280,7 @@ namespace MikraftProjet
             resources.ApplyResources(this.checkBox1, "checkBox1");
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // NewsScreen
             // 
@@ -318,34 +298,12 @@ namespace MikraftProjet
             resources.ApplyResources(this.pourcentage, "pourcentage");
             this.pourcentage.Name = "pourcentage";
             this.pourcentage.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.pourcentage.ValueChanged += new System.EventHandler(this.pourcentage_ValueChanged);
             // 
             // label4
             // 
             resources.ApplyResources(this.label4, "label4");
             this.label4.Name = "label4";
-            // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "Java";
-            resources.ApplyResources(this.openFileDialog1, "openFileDialog1");
-            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
-            // 
-            // label5
-            // 
-            resources.ApplyResources(this.label5, "label5");
-            this.label5.Name = "label5";
-            // 
-            // guna2Button1
-            // 
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.Black;
-            resources.ApplyResources(this.guna2Button1, "guna2Button1");
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click_1);
             // 
             // Home
             // 
@@ -367,8 +325,6 @@ namespace MikraftProjet
             this.SettingsBox.ResumeLayout(false);
             this.ScreenResolution.ResumeLayout(false);
             this.ScreenResolution.PerformLayout();
-            this.Java.ResumeLayout(false);
-            this.Java.PerformLayout();
             this.OtherSettings.ResumeLayout(false);
             this.OtherSettings.PerformLayout();
             this.ResumeLayout(false);
@@ -387,9 +343,7 @@ namespace MikraftProjet
         private Guna.UI2.WinForms.Guna2Button Logout;
         private Guna.UI2.WinForms.Guna2GroupBox SettingsBox;
         private Guna.UI2.WinForms.Guna2GroupBox OtherSettings;
-        private Guna.UI2.WinForms.Guna2GroupBox Java;
         private Guna.UI2.WinForms.Guna2GroupBox ScreenResolution;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.WebBrowser NewsScreen;
         private Guna.UI2.WinForms.Guna2ComboBox RamCombo;
         private System.Windows.Forms.Label label3;
@@ -397,15 +351,14 @@ namespace MikraftProjet
         private Guna.UI2.WinForms.Guna2ComboBox ResCombo;
         private Guna.UI2.WinForms.Guna2ProgressBar pourcentage;
         private System.Windows.Forms.Label label4;
+#pragma warning disable CS0169 // Le champ 'Home.button2_Click' n'est jamais utilisé
         private EventHandler button2_Click;
+#pragma warning restore CS0169 // Le champ 'Home.button2_Click' n'est jamais utilisé
         private Guna.UI2.WinForms.Guna2ComboBox versions;
         private Guna.UI2.WinForms.Guna2ComboBox loader;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.CheckBox checkBox1;
         private Guna.UI2.WinForms.Guna2ComboBox language;
         private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private System.Windows.Forms.Label label5;
     }
 }

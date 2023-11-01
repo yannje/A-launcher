@@ -9,16 +9,20 @@ using CmlLib.Core.Auth.Microsoft;
 using Newtonsoft.Json;
 using CmlLib.Core.Installer.FabricMC;
 using System.Threading;
+using static System.Windows.Forms.Design.AxImporter;
+using System.Collections.Generic;
+using ICSharpCode.SharpZipLib.Zip;
 
 namespace MikraftProjet
 {
     public partial class Home : Form
 
     {
+#pragma warning disable CS0169 // Le champ 'Home.lsession' n'est jamais utilisé
         string lsession;
+#pragma warning restore CS0169 // Le champ 'Home.lsession' n'est jamais utilisé
 
 
-        string ModsDl = "https://firebasestorage.googleapis.com/v0/b/piochyserv.appspot.com/o/yannje.zip?alt=media&token=28d72efb-c3f9-4f41-89a7-f3a910ce4d68";
         private string GetPlayerUUID(string username)
         {
             string apiUrl = $"https://api.mojang.com/users/profiles/minecraft/{username}";
@@ -29,8 +33,6 @@ namespace MikraftProjet
                 return data?.id;
             }
         }
-
-
         public static string MojangId { get; set; }
         public object User { get; set; }
         public bool Isclose { get; set; }
@@ -39,6 +41,10 @@ namespace MikraftProjet
         private string uuid = Login.UUID;
         private bool Ispremium = Login.Ispremium;
 
+
+        // uhhh save thing (doesn't work)
+        Dictionary<string, bool> options = new Dictionary<string, bool>();
+
         public Home()
         {
             InitializeComponent();
@@ -46,6 +52,15 @@ namespace MikraftProjet
             label4.Visible = false;
             HomeClose();
             NewsRefresh();
+            CreateSave();
+            SaveOptions();
+            LoadOptions();
+        }
+
+        private void CreateSave()
+        {
+            Directory.CreateDirectory("Options");
+            File.Create(@"Options\options.txt");
         }
 
         private void HomeClose()
@@ -80,35 +95,37 @@ namespace MikraftProjet
 
         private void displayDefaultHead()
         {
-            Head.ImageLocation = @"Resources\steve.png"; 
+            Head.ImageLocation = @"Resources\head.png"; 
         }
 
         private void DisplayPlayerHead(object uuid)
         {
+           if(Ispremium == true)
+           {
+               if (File.Exists(@"Resources\head2.png"))
+               {
+                    Head.ImageLocation = @"Resources\head2.png";
+               }
+               else
+               {
+                   WebClient webClient = new WebClient();
+                   string avatarUrl = $"https://crafatar.com/avatars/{uuid}";
+
+                   webClient.DownloadFile(avatarUrl, @"Resources\head.png");
+
+                   using (var originalImage = Image.FromFile(@"Resources\head.png"))
+                   {
+                       using (var resizedImage = new Bitmap(48, 48))
+                       using (var graphics = Graphics.FromImage(resizedImage))
+                       {
+                            graphics.DrawImage(originalImage, 0, 0, 48, 48);
+                            resizedImage.Save(@"Resources\head2.png");
+                       }
+                   }
+                   Head.ImageLocation = @"Resources\head2.png";
+               }
+           }
            
-            if (File.Exists(@"Resources\head2.png"))
-            {
-                Head.ImageLocation = @"Resources\head2.png";
-            }
-            else
-            {
-                WebClient webClient = new WebClient();
-                string avatarUrl = $"https://crafatar.com/avatars/{uuid}";
-
-                webClient.DownloadFile(avatarUrl, @"Resources\head.png");
-
-                using (var originalImage = Image.FromFile(@"Resources\head.png"))
-                {
-                    using (var resizedImage = new Bitmap(48, 48))
-                    using (var graphics = Graphics.FromImage(resizedImage))
-                    {
-                        graphics.DrawImage(originalImage, 0, 0, 48, 48);
-                        resizedImage.Save(@"Resources\head2.png");
-                    }
-                }
-                File.Delete(@"Resources\head.png");
-                Head.ImageLocation = @"Resources\head2.png";
-            }
         }
 
         private void Game_Click(object sender, EventArgs eventArgs)
@@ -141,7 +158,8 @@ namespace MikraftProjet
             string selectedresolution = ResCombo.SelectedItem.ToString();
             string selectedram = RamCombo.SelectedItem.ToString();
             string[] resolutionParts = selectedresolution.Split('x');
-            
+  
+
             int width = int.Parse(resolutionParts[0]);
             int height = int.Parse(resolutionParts[1]);
             int ram = int.Parse(selectedram);
@@ -176,10 +194,11 @@ namespace MikraftProjet
                 {
                     Hide();
                 }
+                process.StartInfo.UseShellExecute = false;
+                process.StartInfo.CreateNoWindow = true;
                 process.EnableRaisingEvents = true;
                 process.Exited += new EventHandler(GameProcess_Exited);
                 process.Start();
-
                 
             };
 
@@ -196,6 +215,8 @@ namespace MikraftProjet
                 {
                     Hide();
                 }
+                process.StartInfo.UseShellExecute = false;
+                process.StartInfo.CreateNoWindow = true;
                 process.EnableRaisingEvents = true;
                 process.Exited += new EventHandler(GameProcess_Exited);
                 process.Start();
@@ -209,7 +230,10 @@ namespace MikraftProjet
                 if (checkBox1.Checked)
                 {
                     Hide();
+
                 }
+                process.StartInfo.CreateNoWindow = true;
+                process.StartInfo.UseShellExecute = false;
                 process.EnableRaisingEvents = true;
                 process.Exited += new EventHandler(GameProcess_Exited);
                 process.Start();
@@ -299,6 +323,8 @@ namespace MikraftProjet
                 {
                     Hide();
                 }
+                process.StartInfo.CreateNoWindow = true;
+                process.StartInfo.UseShellExecute = false;
                 process.EnableRaisingEvents = true;
                 process.Exited += new EventHandler(GameProcess_Exited);
                 process.Start();
@@ -319,6 +345,8 @@ namespace MikraftProjet
                 {
                     Hide();
                 }
+                process.StartInfo.CreateNoWindow = true;
+                process.StartInfo.UseShellExecute = false;
                 process.EnableRaisingEvents = true;
                 process.Exited += new EventHandler(GameProcess_Exited);
                 process.Start();
@@ -333,6 +361,8 @@ namespace MikraftProjet
                 {
                     Hide();
                 }
+                process.StartInfo.CreateNoWindow = true;
+                process.StartInfo.UseShellExecute = false;
                 process.EnableRaisingEvents = true;
                 process.Exited += new EventHandler(GameProcess_Exited);
                 process.Start();
@@ -388,7 +418,19 @@ namespace MikraftProjet
             if (checkBox2.Checked == false)
             {
                 NewsScreen.Show();
-            }
+            };
+
+            if (checkBox2.Checked == true)
+            {
+                options["HideNews"] = true; // Mettez à jour l'option
+
+            };
+            if (checkBox2.Checked == false)
+            {
+                options["HideNews"] = false; // Mettez à jour l'option
+
+            };
+
         }
 
         private void openFileDialog1_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
@@ -398,7 +440,6 @@ namespace MikraftProjet
 
         private void guna2Button1_Click_1(object sender, EventArgs e)
         {
-            openFileDialog1.ShowDialog();
         }
 
         private void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -416,5 +457,61 @@ namespace MikraftProjet
             Controls.Clear();
             InitializeComponent();
         }
+
+        private void SaveOptions()
+        {
+            options.Add("HideLauncher", false);
+            options.Add("HideNews", false);
+            options.Add("CloseLauncher", false);
+
+            string json = JsonConvert.SerializeObject(options, Formatting.Indented);
+            File.WriteAllText("options.json", json);
+        }
+
+        private void pourcentage_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked == true)
+            {
+                options["HideLauncher"] = true; // Mettez à jour l'option
+            };
+
+            if (checkBox1.Checked == false)
+            {
+                options["HideLauncher"] = false; // Mettez à jour l'option
+            };
+        }
+
+        private void checkBox3_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox3.Checked == true)
+            {
+                options["CloseLauncher"] = true; // Mettez à jour l'option
+            };
+            if (checkBox3.Checked == false)
+            {
+                options["CloseLauncher"] = false; // Mettez à jour l'option
+            };
+
+        }
+
+        public Options LoadOptions()
+        {
+            if (File.Exists("options.json"))
+            {
+                string json = File.ReadAllText("options.json");
+                return JsonConvert.DeserializeObject<Options>(json);
+            }
+            else
+            {
+                return new Options();
+            }
+        }
     }
 }
+
+// woah 500

@@ -58,3 +58,12 @@ C:\Users\taile\source\repos\MikraftProjet\MikraftProjet\bin\Debug\CmlLib.Core.In
 C:\Users\taile\source\repos\MikraftProjet\MikraftProjet\bin\Debug\HtmlAgilityPack.dll
 C:\Users\taile\source\repos\MikraftProjet\MikraftProjet\bin\Debug\HtmlAgilityPack.pdb
 C:\Users\taile\source\repos\MikraftProjet\MikraftProjet\bin\Debug\HtmlAgilityPack.xml
+C:\Users\taile\source\repos\MikraftProjet\MikraftProjet\bin\Debug\en\MikraftProjet.resources.dll
+C:\Users\taile\source\repos\MikraftProjet\MikraftProjet\obj\Debug\MikraftProjet.Home.en.resources
+C:\Users\taile\source\repos\MikraftProjet\MikraftProjet\obj\Debug\en\MikraftProjet.resources.dll
+C:\Users\taile\source\repos\MikraftProjet\MikraftProjet\bin\Debug\fr\MikraftProjet.resources.dll
+C:\Users\taile\source\repos\MikraftProjet\MikraftProjet\obj\Debug\MikraftProjet.Home.fr.resources
+C:\Users\taile\source\repos\MikraftProjet\MikraftProjet\obj\Debug\fr\MikraftProjet.resources.dll
+C:\Users\taile\source\repos\MikraftProjet\MikraftProjet\bin\Debug\AutoUpdater.NET.dll
+C:\Users\taile\source\repos\MikraftProjet\MikraftProjet\bin\Debug\AutoUpdater.NET.pdb
+C:\Users\taile\source\repos\MikraftProjet\MikraftProjet\bin\Debug\AutoUpdater.NET.xml
