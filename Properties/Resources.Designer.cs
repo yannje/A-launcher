@@ -73,9 +73,50 @@ namespace MikraftProjet.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cadre_sans_couture_horizontal_noel_guirlande_diodes_branches_sapin_jouets_noel_rouges_145391_981 {
+            get {
+                object obj = ResourceManager.GetObject("cadre_sans_couture_horizontal_noel_guirlande_diodes_branches_sapin_jouets_noel_ro" +
+                        "uges_145391_981", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Girl_Land {
+            get {
+                object obj = ResourceManager.GetObject("Girl_Land", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Login {
             get {
                 object obj = ResourceManager.GetObject("Login", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Nowel {
+            get {
+                object obj = ResourceManager.GetObject("Nowel", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Nowel1 {
+            get {
+                object obj = ResourceManager.GetObject("Nowel1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

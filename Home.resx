@@ -117,108 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="&gt;&gt;loader.Name" xml:space="preserve">
-    <value>loader</value>
-  </data>
-  <data name="&gt;&gt;loader.Type" xml:space="preserve">
-    <value>Guna.UI2.WinForms.Guna2ComboBox, Guna.UI2, Version=2.0.4.4, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
-  </data>
-  <data name="&gt;&gt;loader.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;loader.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;versions.Name" xml:space="preserve">
-    <value>versions</value>
-  </data>
-  <data name="&gt;&gt;versions.Type" xml:space="preserve">
-    <value>Guna.UI2.WinForms.Guna2ComboBox, Guna.UI2, Version=2.0.4.4, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
-  </data>
-  <data name="&gt;&gt;versions.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;versions.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;Logout.Name" xml:space="preserve">
-    <value>Logout</value>
-  </data>
-  <data name="&gt;&gt;Logout.Type" xml:space="preserve">
-    <value>Guna.UI2.WinForms.Guna2Button, Guna.UI2, Version=2.0.4.4, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
-  </data>
-  <data name="&gt;&gt;Logout.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;Logout.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;Game.Name" xml:space="preserve">
-    <value>Game</value>
-  </data>
-  <data name="&gt;&gt;Game.Type" xml:space="preserve">
-    <value>Guna.UI2.WinForms.Guna2Button, Guna.UI2, Version=2.0.4.4, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
-  </data>
-  <data name="&gt;&gt;Game.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;Game.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;NameMC.Name" xml:space="preserve">
-    <value>NameMC</value>
-  </data>
-  <data name="&gt;&gt;NameMC.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;NameMC.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;NameMC.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;Head.Name" xml:space="preserve">
-    <value>Head</value>
-  </data>
-  <data name="&gt;&gt;Head.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Head.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;Head.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="groupBox1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 613</value>
-  </data>
-  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1264, 68</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
   <data name="loader.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9.75pt, style=Bold</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="loader.ItemHeight" type="System.Int32, mscorlib">
     <value>30</value>
   </data>
@@ -229,7 +132,10 @@
     <value>Forge</value>
   </data>
   <data name="loader.Items2" xml:space="preserve">
-    <value>Fabric</value>
+    <value>Optifine</value>
+  </data>
+  <data name="loader.Items3" xml:space="preserve">
+    <value>Iris</value>
   </data>
   <data name="loader.Location" type="System.Drawing.Point, System.Drawing">
     <value>738, 20</value>
@@ -279,6 +185,9 @@
   <data name="versions.Items6" xml:space="preserve">
     <value>1.20.2</value>
   </data>
+  <data name="versions.Items7" xml:space="preserve">
+    <value>1.20.4</value>
+  </data>
   <data name="versions.Location" type="System.Drawing.Point, System.Drawing">
     <value>888, 20</value>
   </data>
@@ -301,7 +210,7 @@
     <value>1</value>
   </data>
   <data name="Logout.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Roboto Medium, 12pt, style=Bold</value>
+    <value>Microsoft Sans Serif, 12pt, style=Bold</value>
   </data>
   <data name="Logout.Location" type="System.Drawing.Point, System.Drawing">
     <value>1069, 15</value>
@@ -328,7 +237,7 @@
     <value>2</value>
   </data>
   <data name="Game.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Roboto Medium, 12pt, style=Bold</value>
+    <value>Microsoft Sans Serif, 12pt, style=Bold</value>
   </data>
   <data name="Game.Location" type="System.Drawing.Point, System.Drawing">
     <value>552, 15</value>
@@ -405,6 +314,55 @@
   <data name="&gt;&gt;Head.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="groupBox1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 613</value>
+  </data>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1264, 68</value>
+  </data>
+  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>262, 246</value>
+  </data>
+  <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>119, 23</value>
+  </data>
+  <data name="button1.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="button1.Text" xml:space="preserve">
+    <value>yannje Client</value>
+  </data>
+  <data name="&gt;&gt;button1.Name" xml:space="preserve">
+    <value>button1</value>
+  </data>
+  <data name="&gt;&gt;button1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button1.Parent" xml:space="preserve">
+    <value>OtherSettings</value>
+  </data>
+  <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="InfoMC.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -431,255 +389,6 @@
   </data>
   <data name="&gt;&gt;InfoMC.ZOrder" xml:space="preserve">
     <value>3</value>
-  </data>
-  <data name="&gt;&gt;ResCombo.Name" xml:space="preserve">
-    <value>ResCombo</value>
-  </data>
-  <data name="&gt;&gt;ResCombo.Type" xml:space="preserve">
-    <value>Guna.UI2.WinForms.Guna2ComboBox, Guna.UI2, Version=2.0.4.4, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
-  </data>
-  <data name="&gt;&gt;ResCombo.Parent" xml:space="preserve">
-    <value>ScreenResolution</value>
-  </data>
-  <data name="&gt;&gt;ResCombo.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;RamCombo.Name" xml:space="preserve">
-    <value>RamCombo</value>
-  </data>
-  <data name="&gt;&gt;RamCombo.Type" xml:space="preserve">
-    <value>Guna.UI2.WinForms.Guna2ComboBox, Guna.UI2, Version=2.0.4.4, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
-  </data>
-  <data name="&gt;&gt;RamCombo.Parent" xml:space="preserve">
-    <value>ScreenResolution</value>
-  </data>
-  <data name="&gt;&gt;RamCombo.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;label3.Name" xml:space="preserve">
-    <value>label3</value>
-  </data>
-  <data name="&gt;&gt;label3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
-    <value>ScreenResolution</value>
-  </data>
-  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;label2.Name" xml:space="preserve">
-    <value>label2</value>
-  </data>
-  <data name="&gt;&gt;label2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
-    <value>ScreenResolution</value>
-  </data>
-  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="ScreenResolution.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9pt, style=Bold, Underline</value>
-  </data>
-  <data name="ScreenResolution.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 43</value>
-  </data>
-  <data name="ScreenResolution.Size" type="System.Drawing.Size, System.Drawing">
-    <value>384, 186</value>
-  </data>
-  <data name="ScreenResolution.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="ScreenResolution.Text" xml:space="preserve">
-    <value>General</value>
-  </data>
-  <data name="&gt;&gt;ScreenResolution.Name" xml:space="preserve">
-    <value>ScreenResolution</value>
-  </data>
-  <data name="&gt;&gt;ScreenResolution.Type" xml:space="preserve">
-    <value>Guna.UI2.WinForms.Guna2GroupBox, Guna.UI2, Version=2.0.4.4, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
-  </data>
-  <data name="&gt;&gt;ScreenResolution.Parent" xml:space="preserve">
-    <value>SettingsBox</value>
-  </data>
-  <data name="&gt;&gt;ScreenResolution.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="checkBox3.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="checkBox3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 89</value>
-  </data>
-  <data name="checkBox3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>260, 19</value>
-  </data>
-  <data name="checkBox3.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="checkBox3.Text" xml:space="preserve">
-    <value>Close the launcher when the game is close</value>
-  </data>
-  <data name="&gt;&gt;checkBox3.Name" xml:space="preserve">
-    <value>checkBox3</value>
-  </data>
-  <data name="&gt;&gt;checkBox3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBox3.Parent" xml:space="preserve">
-    <value>OtherSettings</value>
-  </data>
-  <data name="&gt;&gt;checkBox3.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="language.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 10pt</value>
-  </data>
-  <data name="language.ItemHeight" type="System.Int32, mscorlib">
-    <value>30</value>
-  </data>
-  <data name="language.Items" xml:space="preserve">
-    <value>English</value>
-  </data>
-  <data name="language.Items1" xml:space="preserve">
-    <value>French</value>
-  </data>
-  <data name="language.Location" type="System.Drawing.Point, System.Drawing">
-    <value>262, 275</value>
-  </data>
-  <data name="language.Size" type="System.Drawing.Size, System.Drawing">
-    <value>119, 36</value>
-  </data>
-  <data name="language.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;language.Name" xml:space="preserve">
-    <value>language</value>
-  </data>
-  <data name="&gt;&gt;language.Type" xml:space="preserve">
-    <value>Guna.UI2.WinForms.Guna2ComboBox, Guna.UI2, Version=2.0.4.4, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
-  </data>
-  <data name="&gt;&gt;language.Parent" xml:space="preserve">
-    <value>OtherSettings</value>
-  </data>
-  <data name="&gt;&gt;language.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="checkBox2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="checkBox2.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 8.25pt, style=Bold, Underline</value>
-  </data>
-  <data name="checkBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 66</value>
-  </data>
-  <data name="checkBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>228, 17</value>
-  </data>
-  <data name="checkBox2.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="checkBox2.Text" xml:space="preserve">
-    <value>Disable the "News Panel" (hide it now)</value>
-  </data>
-  <data name="&gt;&gt;checkBox2.Name" xml:space="preserve">
-    <value>checkBox2</value>
-  </data>
-  <data name="&gt;&gt;checkBox2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBox2.Parent" xml:space="preserve">
-    <value>OtherSettings</value>
-  </data>
-  <data name="&gt;&gt;checkBox2.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="checkBox1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="checkBox1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 8.25pt, style=Bold, Underline</value>
-  </data>
-  <data name="checkBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 43</value>
-  </data>
-  <data name="checkBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>243, 17</value>
-  </data>
-  <data name="checkBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="checkBox1.Text" xml:space="preserve">
-    <value>Hide the launcher when the game is open</value>
-  </data>
-  <data name="&gt;&gt;checkBox1.Name" xml:space="preserve">
-    <value>checkBox1</value>
-  </data>
-  <data name="&gt;&gt;checkBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBox1.Parent" xml:space="preserve">
-    <value>OtherSettings</value>
-  </data>
-  <data name="&gt;&gt;checkBox1.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="OtherSettings.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9pt, style=Bold, Underline</value>
-  </data>
-  <data name="OtherSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 244</value>
-  </data>
-  <data name="OtherSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>384, 314</value>
-  </data>
-  <data name="OtherSettings.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="OtherSettings.Text" xml:space="preserve">
-    <value>Others</value>
-  </data>
-  <data name="&gt;&gt;OtherSettings.Name" xml:space="preserve">
-    <value>OtherSettings</value>
-  </data>
-  <data name="&gt;&gt;OtherSettings.Type" xml:space="preserve">
-    <value>Guna.UI2.WinForms.Guna2GroupBox, Guna.UI2, Version=2.0.4.4, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
-  </data>
-  <data name="&gt;&gt;OtherSettings.Parent" xml:space="preserve">
-    <value>SettingsBox</value>
-  </data>
-  <data name="&gt;&gt;OtherSettings.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="SettingsBox.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Black, 12pt, style=Bold</value>
-  </data>
-  <data name="SettingsBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>862, 12</value>
-  </data>
-  <data name="SettingsBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>390, 561</value>
-  </data>
-  <data name="SettingsBox.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="SettingsBox.Text" xml:space="preserve">
-    <value>Settings</value>
-  </data>
-  <data name="&gt;&gt;SettingsBox.Name" xml:space="preserve">
-    <value>SettingsBox</value>
-  </data>
-  <data name="&gt;&gt;SettingsBox.Type" xml:space="preserve">
-    <value>Guna.UI2.WinForms.Guna2GroupBox, Guna.UI2, Version=2.0.4.4, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
-  </data>
-  <data name="&gt;&gt;SettingsBox.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;SettingsBox.ZOrder" xml:space="preserve">
-    <value>5</value>
   </data>
   <data name="ResCombo.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 10pt</value>
@@ -819,6 +528,234 @@
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="ScreenResolution.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt, style=Bold, Underline</value>
+  </data>
+  <data name="ScreenResolution.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 43</value>
+  </data>
+  <data name="ScreenResolution.Size" type="System.Drawing.Size, System.Drawing">
+    <value>384, 186</value>
+  </data>
+  <data name="ScreenResolution.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="ScreenResolution.Text" xml:space="preserve">
+    <value>General</value>
+  </data>
+  <data name="&gt;&gt;ScreenResolution.Name" xml:space="preserve">
+    <value>ScreenResolution</value>
+  </data>
+  <data name="&gt;&gt;ScreenResolution.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2GroupBox, Guna.UI2, Version=2.0.4.4, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
+  </data>
+  <data name="&gt;&gt;ScreenResolution.Parent" xml:space="preserve">
+    <value>SettingsBox</value>
+  </data>
+  <data name="&gt;&gt;ScreenResolution.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="DisableNowel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="DisableNowel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 275</value>
+  </data>
+  <data name="DisableNowel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>155, 19</value>
+  </data>
+  <data name="DisableNowel.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="DisableNowel.Text" xml:space="preserve">
+    <value>Disable the white point</value>
+  </data>
+  <data name="&gt;&gt;DisableNowel.Name" xml:space="preserve">
+    <value>DisableNowel</value>
+  </data>
+  <data name="&gt;&gt;DisableNowel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DisableNowel.Parent" xml:space="preserve">
+    <value>OtherSettings</value>
+  </data>
+  <data name="&gt;&gt;DisableNowel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="checkBox3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBox3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 89</value>
+  </data>
+  <data name="checkBox3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>260, 19</value>
+  </data>
+  <data name="checkBox3.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="checkBox3.Text" xml:space="preserve">
+    <value>Close the launcher when the game is close</value>
+  </data>
+  <data name="&gt;&gt;checkBox3.Name" xml:space="preserve">
+    <value>checkBox3</value>
+  </data>
+  <data name="&gt;&gt;checkBox3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBox3.Parent" xml:space="preserve">
+    <value>OtherSettings</value>
+  </data>
+  <data name="&gt;&gt;checkBox3.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="language.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 10pt</value>
+  </data>
+  <data name="language.ItemHeight" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="language.Items" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="language.Items1" xml:space="preserve">
+    <value>French</value>
+  </data>
+  <data name="language.Location" type="System.Drawing.Point, System.Drawing">
+    <value>262, 275</value>
+  </data>
+  <data name="language.Size" type="System.Drawing.Size, System.Drawing">
+    <value>119, 36</value>
+  </data>
+  <data name="language.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;language.Name" xml:space="preserve">
+    <value>language</value>
+  </data>
+  <data name="&gt;&gt;language.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2ComboBox, Guna.UI2, Version=2.0.4.4, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
+  </data>
+  <data name="&gt;&gt;language.Parent" xml:space="preserve">
+    <value>OtherSettings</value>
+  </data>
+  <data name="&gt;&gt;language.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="checkBox2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBox2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 8.25pt, style=Bold, Underline</value>
+  </data>
+  <data name="checkBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 66</value>
+  </data>
+  <data name="checkBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 17</value>
+  </data>
+  <data name="checkBox2.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="checkBox2.Text" xml:space="preserve">
+    <value>Disable the "News Panel" (hide it now)</value>
+  </data>
+  <data name="&gt;&gt;checkBox2.Name" xml:space="preserve">
+    <value>checkBox2</value>
+  </data>
+  <data name="&gt;&gt;checkBox2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBox2.Parent" xml:space="preserve">
+    <value>OtherSettings</value>
+  </data>
+  <data name="&gt;&gt;checkBox2.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="checkBox1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBox1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 8.25pt, style=Bold, Underline</value>
+  </data>
+  <data name="checkBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 43</value>
+  </data>
+  <data name="checkBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>243, 17</value>
+  </data>
+  <data name="checkBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="checkBox1.Text" xml:space="preserve">
+    <value>Hide the launcher when the game is open</value>
+  </data>
+  <data name="&gt;&gt;checkBox1.Name" xml:space="preserve">
+    <value>checkBox1</value>
+  </data>
+  <data name="&gt;&gt;checkBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBox1.Parent" xml:space="preserve">
+    <value>OtherSettings</value>
+  </data>
+  <data name="&gt;&gt;checkBox1.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="OtherSettings.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt, style=Bold, Underline</value>
+  </data>
+  <data name="OtherSettings.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 244</value>
+  </data>
+  <data name="OtherSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>384, 314</value>
+  </data>
+  <data name="OtherSettings.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="OtherSettings.Text" xml:space="preserve">
+    <value>Others</value>
+  </data>
+  <data name="&gt;&gt;OtherSettings.Name" xml:space="preserve">
+    <value>OtherSettings</value>
+  </data>
+  <data name="&gt;&gt;OtherSettings.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2GroupBox, Guna.UI2, Version=2.0.4.4, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
+  </data>
+  <data name="&gt;&gt;OtherSettings.Parent" xml:space="preserve">
+    <value>SettingsBox</value>
+  </data>
+  <data name="&gt;&gt;OtherSettings.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="SettingsBox.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Black, 12pt, style=Bold</value>
+  </data>
+  <data name="SettingsBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>862, 12</value>
+  </data>
+  <data name="SettingsBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>390, 561</value>
+  </data>
+  <data name="SettingsBox.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="SettingsBox.Text" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="&gt;&gt;SettingsBox.Name" xml:space="preserve">
+    <value>SettingsBox</value>
+  </data>
+  <data name="&gt;&gt;SettingsBox.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2GroupBox, Guna.UI2, Version=2.0.4.4, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
+  </data>
+  <data name="&gt;&gt;SettingsBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;SettingsBox.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
   <data name="NewsScreen.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 12</value>
   </data>
@@ -843,28 +780,28 @@
   <data name="&gt;&gt;NewsScreen.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="pourcentage.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="pourcentagebar.Location" type="System.Drawing.Point, System.Drawing">
     <value>-3, 595</value>
   </data>
-  <data name="pourcentage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1270, 23</value>
+  <data name="pourcentagebar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1267, 23</value>
   </data>
-  <data name="pourcentage.TabIndex" type="System.Int32, mscorlib">
+  <data name="pourcentagebar.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <data name="pourcentage.Text" xml:space="preserve">
+  <data name="pourcentagebar.Text" xml:space="preserve">
     <value>guna2ProgressBar1</value>
   </data>
-  <data name="&gt;&gt;pourcentage.Name" xml:space="preserve">
-    <value>pourcentage</value>
+  <data name="&gt;&gt;pourcentagebar.Name" xml:space="preserve">
+    <value>pourcentagebar</value>
   </data>
-  <data name="&gt;&gt;pourcentage.Type" xml:space="preserve">
+  <data name="&gt;&gt;pourcentagebar.Type" xml:space="preserve">
     <value>Guna.UI2.WinForms.Guna2ProgressBar, Guna.UI2, Version=2.0.4.4, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
   </data>
-  <data name="&gt;&gt;pourcentage.Parent" xml:space="preserve">
+  <data name="&gt;&gt;pourcentagebar.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;pourcentage.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;pourcentagebar.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="label4.AutoSize" type="System.Boolean, mscorlib">
@@ -881,6 +818,9 @@
   </data>
   <data name="label4.Text" xml:space="preserve">
     <value>label4</value>
+  </data>
+  <data name="label4.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="&gt;&gt;label4.Name" xml:space="preserve">
     <value>label4</value>

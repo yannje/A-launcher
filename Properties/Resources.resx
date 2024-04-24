@@ -130,4 +130,16 @@
   <data name="setting1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\setting.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="cadre_sans_couture_horizontal_noel_guirlande_diodes_branches_sapin_jouets_noel_rouges_145391_981" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cadre-sans-couture-horizontal-noel-guirlande-diodes-branches-sapin-jouets-noel-rouges_145391-981.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Girl_Land" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Girl-Land.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Nowel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Nowel.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Nowel1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Nowel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

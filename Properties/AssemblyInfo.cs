@@ -6,10 +6,10 @@ using System.Runtime.InteropServices;
 // l'ensemble d'attributs suivant. Changez les valeurs de ces attributs pour modifier les informations
 // associées à un assembly.
 [assembly: AssemblyTitle("MikraftProjet")]
-[assembly: AssemblyDescription("Multi-Launcher for Piochy")]
+[assembly: AssemblyDescription("A-Launcher that I made in c# for fun")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("MikraftProjet")]
+[assembly: AssemblyProduct("MikraftProjet by yannje")]
 [assembly: AssemblyCopyright("Copyright ©  2023")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

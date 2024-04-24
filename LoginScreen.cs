@@ -1,25 +1,18 @@
 ﻿using CmlLib.Core.Auth.Microsoft;
 using System;
 using System.Windows.Forms;
-using System.Net;
-using System.IO;
-using System.Diagnostics;
 using AutoUpdaterDotNET;
 
 namespace MikraftProjet
 {
     public partial class Login : Form
     {
-#pragma warning disable CS0414 // Le champ 'Login.versionA' est assigné, mais sa valeur n'est jamais utilisée
-        string versionA = "0.0.4";
-#pragma warning restore CS0414 // Le champ 'Login.versionA' est assigné, mais sa valeur n'est jamais utilisée
-        string VersionFile = "https://github.com/yannje/A-launcher/raw/main/update.xml";
+        string VersionFile = "https://raw.githubusercontent.com/yannje/A-Launcher-File/main/version.xml";
 
         public static string Username { get; set; }
         public static string UUID { get; set; }
         public static string Token{ get; set; }
         public static bool Ispremium;
-        WebClient webClient = new WebClient();
 
         public Login()
         {

@@ -281,6 +281,18 @@
   <ItemGroup>
     <None Include="Resources\setting.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Girl-Land.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Nowel.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Nowel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cadre-sans-couture-horizontal-noel-guirlande-diodes-branches-sapin-jouets-noel-rouges_145391-981.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Web.WebView2.1.0.1901.177\build\Microsoft.Web.WebView2.targets" Condition="Exists('..\packages\Microsoft.Web.WebView2.1.0.1901.177\build\Microsoft.Web.WebView2.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

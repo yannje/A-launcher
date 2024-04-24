@@ -38,6 +38,7 @@ namespace MikraftProjet
             this.Game = new Guna.UI2.WinForms.Guna2Button();
             this.NameMC = new System.Windows.Forms.Label();
             this.Head = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.InfoMC = new System.Windows.Forms.Label();
             this.SettingsBox = new Guna.UI2.WinForms.Guna2GroupBox();
             this.ScreenResolution = new Guna.UI2.WinForms.Guna2GroupBox();
@@ -46,12 +47,13 @@ namespace MikraftProjet
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.OtherSettings = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.DisableNowel = new System.Windows.Forms.CheckBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.language = new Guna.UI2.WinForms.Guna2ComboBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.NewsScreen = new System.Windows.Forms.WebBrowser();
-            this.pourcentage = new Guna.UI2.WinForms.Guna2ProgressBar();
+            this.pourcentagebar = new Guna.UI2.WinForms.Guna2ProgressBar();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Head)).BeginInit();
@@ -87,7 +89,8 @@ namespace MikraftProjet
             this.loader.Items.AddRange(new object[] {
             resources.GetString("loader.Items"),
             resources.GetString("loader.Items1"),
-            resources.GetString("loader.Items2")});
+            resources.GetString("loader.Items2"),
+            resources.GetString("loader.Items3")});
             this.loader.Name = "loader";
             this.loader.StartIndex = 0;
             // 
@@ -110,7 +113,8 @@ namespace MikraftProjet
             resources.GetString("versions.Items3"),
             resources.GetString("versions.Items4"),
             resources.GetString("versions.Items5"),
-            resources.GetString("versions.Items6")});
+            resources.GetString("versions.Items6"),
+            resources.GetString("versions.Items7")});
             this.versions.Name = "versions";
             this.versions.StartIndex = 6;
             // 
@@ -151,6 +155,13 @@ namespace MikraftProjet
             this.Head.Name = "Head";
             this.Head.TabStop = false;
             // 
+            // button1
+            // 
+            resources.ApplyResources(this.button1, "button1");
+            this.button1.Name = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_ClickAsync);
+            // 
             // InfoMC
             // 
             resources.ApplyResources(this.InfoMC, "InfoMC");
@@ -162,6 +173,7 @@ namespace MikraftProjet
             this.SettingsBox.BorderRadius = 10;
             this.SettingsBox.Controls.Add(this.ScreenResolution);
             this.SettingsBox.Controls.Add(this.OtherSettings);
+            this.SettingsBox.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.SettingsBox.FillColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.SettingsBox, "SettingsBox");
             this.SettingsBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
@@ -174,6 +186,7 @@ namespace MikraftProjet
             this.ScreenResolution.Controls.Add(this.RamCombo);
             this.ScreenResolution.Controls.Add(this.label3);
             this.ScreenResolution.Controls.Add(this.label2);
+            this.ScreenResolution.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             resources.ApplyResources(this.ScreenResolution, "ScreenResolution");
             this.ScreenResolution.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.ScreenResolution.Name = "ScreenResolution";
@@ -232,21 +245,30 @@ namespace MikraftProjet
             // 
             // OtherSettings
             // 
+            this.OtherSettings.BackgroundImage = global::MikraftProjet.Properties.Resources.Girl_Land;
             this.OtherSettings.BorderRadius = 10;
+            this.OtherSettings.Controls.Add(this.DisableNowel);
+            this.OtherSettings.Controls.Add(this.button1);
             this.OtherSettings.Controls.Add(this.checkBox3);
             this.OtherSettings.Controls.Add(this.language);
             this.OtherSettings.Controls.Add(this.checkBox2);
             this.OtherSettings.Controls.Add(this.checkBox1);
+            this.OtherSettings.CustomBorderColor = System.Drawing.Color.LightGray;
             resources.ApplyResources(this.OtherSettings, "OtherSettings");
             this.OtherSettings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.OtherSettings.Name = "OtherSettings";
+            // 
+            // DisableNowel
+            // 
+            resources.ApplyResources(this.DisableNowel, "DisableNowel");
+            this.DisableNowel.Name = "DisableNowel";
+            this.DisableNowel.UseVisualStyleBackColor = true;
             // 
             // checkBox3
             // 
             resources.ApplyResources(this.checkBox3, "checkBox3");
             this.checkBox3.Name = "checkBox3";
             this.checkBox3.UseVisualStyleBackColor = true;
-            this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
             // 
             // language
             // 
@@ -280,7 +302,6 @@ namespace MikraftProjet
             resources.ApplyResources(this.checkBox1, "checkBox1");
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // NewsScreen
             // 
@@ -292,13 +313,12 @@ namespace MikraftProjet
             this.NewsScreen.Url = new System.Uri("http://swagshitmoney.rf.gd/", System.UriKind.Absolute);
             this.NewsScreen.WebBrowserShortcutsEnabled = false;
             // 
-            // pourcentage
+            // pourcentagebar
             // 
-            this.pourcentage.BorderRadius = 10;
-            resources.ApplyResources(this.pourcentage, "pourcentage");
-            this.pourcentage.Name = "pourcentage";
-            this.pourcentage.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            this.pourcentage.ValueChanged += new System.EventHandler(this.pourcentage_ValueChanged);
+            this.pourcentagebar.BorderRadius = 10;
+            resources.ApplyResources(this.pourcentagebar, "pourcentagebar");
+            this.pourcentagebar.Name = "pourcentagebar";
+            this.pourcentagebar.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             // 
             // label4
             // 
@@ -311,14 +331,13 @@ namespace MikraftProjet
             this.BackgroundImage = global::MikraftProjet.Properties.Resources._2023_08_03_13_21_50;
             resources.ApplyResources(this, "$this");
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.pourcentage);
+            this.Controls.Add(this.pourcentagebar);
             this.Controls.Add(this.NewsScreen);
             this.Controls.Add(this.InfoMC);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.SettingsBox);
             this.MaximizeBox = false;
             this.Name = "Home";
-            this.Load += new System.EventHandler(this.Home_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Head)).EndInit();
@@ -342,14 +361,13 @@ namespace MikraftProjet
         private System.Windows.Forms.Label InfoMC;
         private Guna.UI2.WinForms.Guna2Button Logout;
         private Guna.UI2.WinForms.Guna2GroupBox SettingsBox;
-        private Guna.UI2.WinForms.Guna2GroupBox OtherSettings;
         private Guna.UI2.WinForms.Guna2GroupBox ScreenResolution;
         private System.Windows.Forms.WebBrowser NewsScreen;
         private Guna.UI2.WinForms.Guna2ComboBox RamCombo;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2ComboBox ResCombo;
-        private Guna.UI2.WinForms.Guna2ProgressBar pourcentage;
+        private Guna.UI2.WinForms.Guna2ProgressBar pourcentagebar;
         private System.Windows.Forms.Label label4;
 #pragma warning disable CS0169 // Le champ 'Home.button2_Click' n'est jamais utilisé
         private EventHandler button2_Click;
@@ -360,5 +378,8 @@ namespace MikraftProjet
         private System.Windows.Forms.CheckBox checkBox1;
         private Guna.UI2.WinForms.Guna2ComboBox language;
         private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.Button button1;
+        private Guna.UI2.WinForms.Guna2GroupBox OtherSettings;
+        private System.Windows.Forms.CheckBox DisableNowel;
     }
 }

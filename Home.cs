@@ -11,7 +11,12 @@ using CmlLib.Core.Installer.FabricMC;
 using System.Threading;
 using static System.Windows.Forms.Design.AxImporter;
 using System.Collections.Generic;
-using ICSharpCode.SharpZipLib.Zip;
+using System.Linq;
+using ZipFile = System.IO.Compression.ZipFile;
+using Timer = System.Windows.Forms.Timer;
+using Control = System.Web.UI.Control;
+using System.Net.Http;
+using System.Threading.Tasks;
 
 namespace MikraftProjet
 {
@@ -22,7 +27,7 @@ namespace MikraftProjet
         string lsession;
 #pragma warning restore CS0169 // Le champ 'Home.lsession' n'est jamais utilisé
 
-
+        
         private string GetPlayerUUID(string username)
         {
             string apiUrl = $"https://api.mojang.com/users/profiles/minecraft/{username}";
@@ -33,6 +38,9 @@ namespace MikraftProjet
                 return data?.id;
             }
         }
+
+        string yannjefolder = @"multimc\versions\yannje";
+        string yannjever = "https://firebasestorage.googleapis.com/v0/b/piochyserv.appspot.com/o/versions%2Fyannje%2Fyannje.zip?alt=media&token=8f03e7ed-1790-4d60-b37d-f9b1ab614c27";
         public static string MojangId { get; set; }
         public object User { get; set; }
         public bool Isclose { get; set; }
@@ -41,6 +49,10 @@ namespace MikraftProjet
         private string uuid = Login.UUID;
         private bool Ispremium = Login.Ispremium;
 
+
+        //nowel string or smh
+        private Timer timerBoulesDeNeige;
+        private Random random = new Random();
 
         // uhhh save thing (doesn't work)
         Dictionary<string, bool> options = new Dictionary<string, bool>();
@@ -52,16 +64,57 @@ namespace MikraftProjet
             label4.Visible = false;
             HomeClose();
             NewsRefresh();
-            CreateSave();
-            SaveOptions();
-            LoadOptions();
+            MessageBox.Show("Optifine 1.20.2, 1.19.4, 1.18.2, 1.16.5, 1.12.2 can't be downlaoded. Iris is the solution");
+            Directory.CreateDirectory("Download");
+            //nowel code
+
+            ///  timerBoulesDeNeige = new Timer();
+            ///timerBoulesDeNeige.Interval = 5000; // Réglage de l'intervalle du Timer (en millisecondes)
+            //timerBoulesDeNeige.Tick += TimerBoulesDeNeige_Tick;
+
+            //if (DisableNowel.Checked == true)
+            {
+               // timerBoulesDeNeige.Stop();
+               // Controls.Clear();
+            }
+            //else
+            {
+                //timerBoulesDeNeige.Start();
+            }
+         
+
+
+        }
+        /// <summary>
+        /// 
+        /// Nowel Time !!!
+        /// 
+        /// </summary>
+        private void TimerBoulesDeNeige_Tick(object sender, EventArgs e)
+        {
+            //AddBolasDeNowel(boule);
         }
 
-        private void CreateSave()
+        private bool December()
         {
-            Directory.CreateDirectory("Options");
-            File.Create(@"Options\options.txt");
+            return DateTime.Now.Month == 12;
         }
+
+        private void AddBolasDeNowel(BouleDeNeige boule)
+        { Home home = new Home();
+            int TailleBoule = 20;
+            int x = random.Next(home.Width - TailleBoule);
+            int y = random.Next(home.Height - TailleBoule);
+           // BouleDeNeige boule = new BouleDeNeige(new Point(x, y));
+          //  Controls.Add(boule);
+        }
+
+        /// <summary>
+        /// 
+        /// Other things
+        /// 
+        /// </summary>
+        /// 
 
         private void HomeClose()
         {
@@ -100,7 +153,7 @@ namespace MikraftProjet
 
         private void DisplayPlayerHead(object uuid)
         {
-           if(Ispremium == true)
+           if (Ispremium == true)
            {
                if (File.Exists(@"Resources\head2.png"))
                {
@@ -127,25 +180,54 @@ namespace MikraftProjet
            }
            
         }
-
         private void Game_Click(object sender, EventArgs eventArgs)
-        { 
-            if(Ispremium == true)
-            {
-                LaunchDaGame();
-            }
-            else
-            {
-                LaunchDaGameCrack();
-            }    
+        {
+            LaunchDaGame();
         }
+
+        private void button1_ClickAsync(object sender, EventArgs e)
+        {
+            Console.Write(@"multimc\versions\OptiFine-" + @"\OptiFine-" + ".json");
+            WebClient webClient = new WebClient();
+
+            if (File.Exists(@"multimc\versions\yannje\yannje.zip"))
+            {
+                MessageBox.Show("You already have it");
+            }
+            else 
+            {
+                Directory.CreateDirectory(yannjefolder);
+                webClient.DownloadFileAsync(new Uri(yannjever), @"multimc\versions\yannje\yannje.zip");
+                webClient.DownloadProgressChanged += WebClient_DownloadProgressChanged;
+                webClient.DownloadFileCompleted += WebClient_DownloadFileCompleted;
+            } 
+        }
+
+        private void WebClient_DownloadFileCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
+        {
+            MessageBox.Show("Downloaded !, now extracting time !, migth be a litte laggy");
+            ZipFile.ExtractToDirectory(@"multimc\versions\yannje\yannje.zip", yannjefolder);
+        }
+
+        private void WebClient_DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
+        {
+            pourcentagebar.Value = e.ProgressPercentage;
+        }
+
+        static bool EmptyFolder(string yannjefolder)
+        {
+            return !Directory.EnumerateFileSystemEntries(yannjefolder).Any();
+        }
+
 
         /// <summary>
         /// Game
         /// </summary>
-        
+
         private async void LaunchDaGame()
         {
+
+            var session = Ispremium ? new MSession(Login.Username, Login.Token, Login.UUID) : MSession.CreateOfflineSession(Login.Username);
 
             string selectedVersion = versions.SelectedItem.ToString();
             string selectedloader = loader.SelectedItem.ToString();
@@ -158,7 +240,8 @@ namespace MikraftProjet
             string selectedresolution = ResCombo.SelectedItem.ToString();
             string selectedram = RamCombo.SelectedItem.ToString();
             string[] resolutionParts = selectedresolution.Split('x');
-  
+
+            label4.Visible = true;
 
             int width = int.Parse(resolutionParts[0]);
             int height = int.Parse(resolutionParts[1]);
@@ -178,15 +261,14 @@ namespace MikraftProjet
                 MaximumRamMb = ram,
                 ScreenWidth = width,
                 ScreenHeight = height,
-                Session = new MSession(Login.Username, Login.Token, Login.UUID),
+                Session = session,
                 GameLauncherName = "wega",
             };
 
-            if(selectedloader== "Forge")
+            if (selectedloader== "Forge")
             {
-                
-                Logout.Enabled = false;
-                Game.Enabled = false;
+              
+                disable();
 
                 var forgev = await forge.Install(selectedVersion);
                 var process =  await launcher.CreateProcessAsync(forgev, launchOption);
@@ -202,30 +284,10 @@ namespace MikraftProjet
                 
             };
 
-            if (selectedloader == "Fabric")
-            {
-
-                var fabricVersionName = "fabric-loader-0.14.24-"+selectedVersion;
-
-                Logout.Enabled = false;
-                Game.Enabled = false;
-
-                var process = await launcher.CreateProcessAsync(fabricVersionName, launchOption);
-                if (checkBox1.Checked)
-                {
-                    Hide();
-                }
-                process.StartInfo.UseShellExecute = false;
-                process.StartInfo.CreateNoWindow = true;
-                process.EnableRaisingEvents = true;
-                process.Exited += new EventHandler(GameProcess_Exited);
-                process.Start();
-            };
-
             if(selectedloader == "Vanilla")
             {
-                Logout.Enabled = false;
-                Game.Enabled = false;
+              
+                disable();
                 var process = await launcher.CreateProcessAsync(selectedVersion, launchOption);
                 if (checkBox1.Checked)
                 {
@@ -239,9 +301,102 @@ namespace MikraftProjet
                 process.Start();
             };
 
+            if(selectedloader == "Optifine")
+            {
+                disable();
+
+                string[] Zips =
+                {
+                    "https://github.com/yannje/A-Launcher-File/raw/main/Optifine-Loader/"+selectedVersion+"/OptiFine-"+selectedVersion+".zip"
+                };
+
+                string Download = @"Download";
+
+                Task[] telechargements = new Task[Zips.Length];
+                using (HttpClient client = new HttpClient())
+                {
+                    for (int i = 0; i < Zips.Length; i++)
+                    {
+                        int index = i; // Évite la capture incorrecte de la variable dans la boucle
+                        telechargements[i] = TelechargerFichierAsync(client, Zips[index], Download);
+                    }
+
+                    // Attendre que tous les téléchargements soient terminés
+                    await Task.WhenAll(telechargements);
+                };
+
+                if (File.Exists(@"multimc\versions\OptiFine-" + selectedVersion + @"\OptiFine-" + selectedVersion + ".json") == false)
+                { 
+                    Directory.CreateDirectory(@"multimc\versions\OptiFine-" + selectedVersion);
+                    Thread.Sleep(500); // wait 
+                    ZipFile.ExtractToDirectory(@"Download\OptiFine-"+selectedVersion+".zip", @"multimc\versions\OptiFine-" + selectedVersion);
+                    File.Delete(@"Download\OptiFine-" + selectedVersion + ".zip");
+                };
+                 
+                var process = await launcher.CreateProcessAsync("OptiFine-" + selectedVersion, launchOption);
+
+                process.StartInfo.CreateNoWindow = true;
+                process.StartInfo.UseShellExecute = false;
+                process.EnableRaisingEvents = true;
+                process.Exited += new EventHandler(GameProcess_Exited);
+                process.Start();
+            };
+
+            if(selectedloader == "Iris")
+            {
+                disable();
+
+                
+
+                if (File.Exists(@"multimc\versions\Iris-" + selectedVersion + @"\Iris-" + selectedVersion + ".json") == false)
+                {
+                    string[] Zips =
+                    {
+                    "https://github.com/yannje/A-Launcher-File/raw/main/Iris-Loader/"+selectedVersion+"/Iris-"+selectedVersion+".zip",
+                    "https://github.com/yannje/A-Launcher-File/raw/main/Iris-Loader/"+selectedVersion+"/Iris-Mods-"+selectedVersion+".zip"
+                    };
+
+                    string Download = @"Download";
+
+                    Task[] telechargements = new Task[Zips.Length];
+                    using (HttpClient client = new HttpClient())
+                    {
+                        for (int i = 0; i < Zips.Length; i++)
+                        {
+                            int index = i; // Évite la capture incorrecte de la variable dans la boucle
+                            telechargements[i] = TelechargerFichierAsync(client, Zips[index], Download);
+                        }
+
+                        // Attendre que tous les téléchargements soient terminés
+                        await Task.WhenAll(telechargements);
+                    };
+
+                    ZipFile.ExtractToDirectory(@"Download\Iris-"+selectedVersion+".zip", @"multimc\versions\Iris-" + selectedVersion);
+                    ZipFile.ExtractToDirectory(@"Download\Iris-Mods-" + selectedVersion + ".zip", @"multimc\iris-reserved\"+selectedVersion);
+
+                    File.Delete(@"Download\Iris-" + selectedVersion + ".zip");
+                    File.Delete(@"Download\Iris-Mods-" + selectedVersion + ".zip");
+                };
+                    
+                var process = await launcher.CreateProcessAsync("Iris-" + selectedVersion, launchOption);
+
+                    process.StartInfo.CreateNoWindow = true;
+                    process.StartInfo.UseShellExecute = false;
+                    process.EnableRaisingEvents = true;
+                    process.Exited += new EventHandler(GameProcess_Exited);
+                    process.Start();
+                
+                    
+            };
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////
+        
+        private void disable()
+        {
+            Logout.Enabled = false;
+            Game.Enabled = false;
+        }
         private void GameProcess_Exited(object sender, EventArgs e)
         {
 
@@ -268,115 +423,15 @@ namespace MikraftProjet
         }
         private void launcher_ProgressChanged(object sender, System.ComponentModel.ProgressChangedEventArgs e)
         {
-            pourcentage.Value = e.ProgressPercentage;
+            pourcentagebar.Value = e.ProgressPercentage;
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        private async void LaunchDaGameCrack()
-        {
-            string selectedVersion = versions.SelectedItem.ToString();
-            string selectedloader = loader.SelectedItem.ToString();
-            WebClient webClient = new WebClient();
-
-
-            var path = new MinecraftPath("multimc");
-            var launcher = new CMLauncher(path);
-
-            string selectedresolution = ResCombo.SelectedItem.ToString();
-            string selectedram = RamCombo.SelectedItem.ToString();
-
-            string[] resolutionParts = selectedresolution.Split('x');
-            int width = int.Parse(resolutionParts[0]);
-            int height = int.Parse(resolutionParts[1]);
-            int ram = int.Parse(selectedram);
-
-            launcher.FileChanged += Launcher_FileChanged;
-            launcher.ProgressChanged += (s, e) =>
-            {
-                pourcentage.Value = e.ProgressPercentage;
-            };
-
-            var forge = new CmlLib.Core.Installer.Forge.MForge(launcher);
-            var fabricVersionLoader = new FabricVersionLoader();
-            var fabricVersions = await fabricVersionLoader.GetVersionMetadatasAsync();
-
-
-            var launchOption = new MLaunchOption
-            {
-                MaximumRamMb = ram,
-                ScreenWidth = width,
-                ScreenHeight = height,
-                Session = MSession.CreateOfflineSession(username),
-                GameLauncherName = "launcher",
-            };
-
-            if (selectedloader == "Forge")
-            {
-
-                Logout.Enabled = false;
-                Game.Enabled = false;
-
-                var forgev = await forge.Install(selectedVersion);
-                var process = await launcher.CreateProcessAsync(forgev, launchOption);
-                if (checkBox1.Checked)
-                {
-                    Hide();
-                }
-                process.StartInfo.CreateNoWindow = true;
-                process.StartInfo.UseShellExecute = false;
-                process.EnableRaisingEvents = true;
-                process.Exited += new EventHandler(GameProcess_Exited);
-                process.Start();
-
-
-            };
-
-            if (selectedloader == "Fabric")
-            {
-
-                var fabricVersionName = "fabric-loader-0.14.24-" + selectedVersion;
-
-                Logout.Enabled = false;
-                Game.Enabled = false;
-
-                var process = await launcher.CreateProcessAsync(fabricVersionName, launchOption);
-                if (checkBox1.Checked)
-                {
-                    Hide();
-                }
-                process.StartInfo.CreateNoWindow = true;
-                process.StartInfo.UseShellExecute = false;
-                process.EnableRaisingEvents = true;
-                process.Exited += new EventHandler(GameProcess_Exited);
-                process.Start();
-            };
-
-            if (selectedloader == "Vanilla")
-            {
-                Logout.Enabled = false;
-                Game.Enabled = false;
-                var process = await launcher.CreateProcessAsync(selectedVersion, launchOption);
-                if (checkBox1.Checked)
-                {
-                    Hide();
-                }
-                process.StartInfo.CreateNoWindow = true;
-                process.StartInfo.UseShellExecute = false;
-                process.EnableRaisingEvents = true;
-                process.Exited += new EventHandler(GameProcess_Exited);
-                process.Start();
-            };
-        }
 
         /// <summary>
         /// Other
         /// </summary
-
-        private void WebClient_DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
-        {
-            pourcentage.Value = e.ProgressPercentage;
-        }
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
@@ -386,12 +441,6 @@ namespace MikraftProjet
             Hide();
             Login login = new Login();
             login.Show();
-        }
-
-        private void Home_Load(object sender, EventArgs e)
-        {
-            Console.Write("loaded");
-
         }
 
         private void NewsRefresh()
@@ -438,10 +487,6 @@ namespace MikraftProjet
             MessageBox.Show("cool");
         }
 
-        private void guna2Button1_Click_1(object sender, EventArgs e)
-        {
-        }
-
         private void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             switch (language.SelectedIndex)
@@ -458,60 +503,72 @@ namespace MikraftProjet
             InitializeComponent();
         }
 
-        private void SaveOptions()
+        private async Task TelechargerFichierAsync(HttpClient client, string url, string dossierDestination)
         {
-            options.Add("HideLauncher", false);
-            options.Add("HideNews", false);
-            options.Add("CloseLauncher", false);
+            
+            label4.Visible = true;
+            string nomFichier = Path.GetFileName(url);
+            string cheminDestination = Path.Combine(dossierDestination, nomFichier);
 
-            string json = JsonConvert.SerializeObject(options, Formatting.Indented);
-            File.WriteAllText("options.json", json);
-        }
+            label4.Text = $"Téléchargement de {nomFichier}...";
 
-        private void pourcentage_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBox1.Checked == true)
+            try
             {
-                options["HideLauncher"] = true; // Mettez à jour l'option
-            };
+                using (var response = await client.GetAsync(url, HttpCompletionOption.ResponseHeadersRead))
+                {
+                    response.EnsureSuccessStatusCode();
 
-            if (checkBox1.Checked == false)
-            {
-                options["HideLauncher"] = false; // Mettez à jour l'option
-            };
-        }
+                    // Taille totale du fichier (en octets)
+                    long tailleTotale = response.Content.Headers.ContentLength ?? -1;
+                    long octetsTelecharges = 0;
 
-        private void checkBox3_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBox3.Checked == true)
-            {
-                options["CloseLauncher"] = true; // Mettez à jour l'option
-            };
-            if (checkBox3.Checked == false)
-            {
-                options["CloseLauncher"] = false; // Mettez à jour l'option
-            };
+                    using (var stream = await response.Content.ReadAsStreamAsync())
+                    using (var fichier = File.Create(cheminDestination))
+                    {
+                        byte[] tampon = new byte[8192];
+                        int octetsLus;
+                        while ((octetsLus = await stream.ReadAsync(tampon, 0, tampon.Length)) > 0)
+                        {
+                            await fichier.WriteAsync(tampon, 0, octetsLus);
+                            octetsTelecharges += octetsLus;
 
-        }
+                            // Calculer le pourcentage et l'afficher
+                            int pourcentage = (int)((double)octetsTelecharges / tailleTotale * 100);
+                            pourcentagebar.Value = pourcentage;
+                            label4.Text =$"Téléchargement de {nomFichier} : {pourcentage}%";
+                            Application.DoEvents();
+                        }
+                    }
+                }
+                label4.Text = $"Téléchargement de {nomFichier} terminé.";
 
-        public Options LoadOptions()
-        {
-            if (File.Exists("options.json"))
-            {
-                string json = File.ReadAllText("options.json");
-                return JsonConvert.DeserializeObject<Options>(json);
+                Console.WriteLine($"Téléchargement de {url} : {nomFichier} terminé.");
             }
-            else
+            catch (Exception ex)
             {
-                return new Options();
+                Console.WriteLine($"Erreur lors du téléchargement de {nomFichier} : {ex.Message}");
             }
+        }
+    }
+
+
+
+    // class thing 
+    public class BouleDeNeige : Control
+    {
+        public Point Position { get; set; }
+
+        public BouleDeNeige(Point position)
+        {
+            Position = position;
+        }
+
+        public void Deplacer()
+        {
+            Position = new Point(Position.X, Position.Y + 5); // Ajustez la vitesse de déplacement ici
         }
     }
 }
 
-// woah 500
+
+// woah 574
