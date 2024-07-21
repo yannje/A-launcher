@@ -6,6 +6,6 @@ Basic minecraft launcher made in c#
 some beta update will come like 0.0.4.1 or something like that,
 i just need a fking web server
 
--- Edit from 21/07/ 24 at 9:40 PM
+-- Edit from 21/07/24 at 9:40 PM
 
 I did not forgot this projet
