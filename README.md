@@ -9,3 +9,8 @@ i just need a fking web server
 -- Edit from 21/07/24 at 9:40 PM
 
 I did not forgot this projet
+
+-- Edit from 15/01/25
+
+Hey! , I have look back to this project to make things working again but the library that I'm using have change all of their api
+So, I'm doing the launcher back from scratch. I will let this one it will be not maintain anymore
